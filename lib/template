@@ -1,0 +1,5 @@
+git init -qqq
+git remote add origin https://github.com/PluginAndPartners/docker-prestashop
+git fetch origin -qqq
+git checkout main
+git init

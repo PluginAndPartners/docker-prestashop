@@ -1,0 +1,16 @@
+printf "\n\n\n"
+echo "⚙️ Subindo containers"
+docker compose up -d --force-recreate --build
+printf "\n\n\n"
+echo "⚙️ Configurando SSL"
+bash bin/ssl
+printf "\n\n\n"
+echo "⚙️ Configurando prestashop"
+bash bin/configure_presta
+echo "Acesse a sua loja: https://prestashop.local"
+printf "\n"
+echo "Configure o Prestashop em https://prestashop.local/wp-admin"
+echo "[Usuário: admin / Senha: admin]"
+printf "\n"
+echo "Para instalar o plugin do Mercado Pago: bash bin/install_plugin"
+printf "\n\n\n"

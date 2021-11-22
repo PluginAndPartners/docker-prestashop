@@ -1,0 +1,15 @@
+printf "\n\n\n"
+echo "Gerando certificados com mkcert"
+docker exec -i myapp-nginx mkcert -install "prestashop.local"
+docker exec -i myapp-nginx mv prestashop.local.pem /etc/nginx/certs/
+docker exec -i myapp-nginx mv prestashop.local-key.pem /etc/nginx/certs/
+printf "\n\n\n"
+echo "Copiando nova configuração para suportar SSL"
+cp images/nginx/conf/default.conf.conf config/nginx/templates/.
+printf "\n\n\n"
+echo "Sua senha é necessária para adicionar uma linha no /etc/hosts..."
+echo "127.0.0.1 prestashop.local" | sudo tee -a /etc/hosts
+printf "\n\n\n"
+echo "Reiniciar servidor NGINX"
+docker compose restart nginx
+printf "\n\n\n"
