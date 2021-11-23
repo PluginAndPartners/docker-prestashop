@@ -75,8 +75,8 @@ bash bin/uninstall_plugin
 - `bin/stop` Stop all containers, good practice to use this instead of `docker-compose down -d`, as it may contain additional helpers.
 - `bin/ssl` Create SSL certificate to be used in the project.
 - `bin/configure_prestashop` Installs Prestashop.
+- `bin/configure_nginx` Configure Nginx to works with Prestashop
 - `bin/install_plugin` Set up a setup for installing the Mercado Pago plugin.
-- `bin/uninstall_plugin` Uninstall the plugin from Mercado Pago.
 - `bin/sync` When passing the path of the plugin folder of Mercado Pago, it installs that version inside the project.
 - `bin/remove` **[CAUTION]** Erases the entire project that was inside the containers, including the database. Drop all containers.
 

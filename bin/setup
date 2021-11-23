@@ -9,7 +9,7 @@ echo "⚙️ Configurando prestashop"
 bash bin/configure_presta
 echo "⚙️ Configurando NGINX"
 bash bin/configure_nginx
-echo "⚙️ Configurando NGINX"
+printf "\n"
 echo "⚙️ [DADOS DA LOJA]"
 echo "Acesse a sua loja: https://prestashop.local"
 printf "\n"

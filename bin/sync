@@ -1,17 +1,20 @@
 printf "\n\n\n"
-echo -n "Por favor, coloque o caminho da pasta do seu plugin (por exemplo: /Users/mgouveia/Projects/cart-prestashop): "
+echo -n "Por favor, coloque o caminho da pasta do seu plugin (por exemplo: /Users/mgouveia/Projects/cart-prestashop-7): "
 read filepath
 
 if [ ! -d $filepath ]; then
     echo "Por favor insira um caminho válido"
     printf "\n\n\n"
 else
-    zip -j /tmp/prestashop-mercadopago.zip $filepath/*
-    mkdir src/wp-content/plugins/prestashop-mercadopago/
-    unzip /tmp/prestashop-mercadopago.zip -d src/wp-content/plugins/prestashop-mercadopago/
-    rm /tmp/prestashop-mercadopago.zip
+    mkdir /tmp/mercadopago
+    cp -R $filepath/* /tmp/mercadopago/.
+    rm -rf /tmp/mercadopago/.git
+    rm -rf /tmp/mercadopago/vendor
+    zip -j ~/Desktop/mercadopago.zip /tmp/mercadopago/*
+    rm -rf /tmp/mercadopago/
     printf "\n\n\n"
-    echo -n "Plugin instalado com sucesso"
+    echo "Zip do plugin criado e esta disponivel na pasta 'Desktop' como 'mercadopago.zip'"
+    echo "Agora é necessário entrar no Gerenciador de Modulos e enviar o Modulo para a instalação."
     printf "\n\n\n"
 fi
 
