@@ -1,7 +1,12 @@
 FROM php:7.4-fpm-alpine
 
-# Install MySQL extension, as WP-CLI needs to access to prestashop database
-RUN docker-php-ext-install mysqli
+# Install MySQL,PDO and ZIP extension for Prestashop 
+RUN apk add --no-cache zip libzip-dev
+RUN docker-php-ext-configure zip
+RUN docker-php-ext-install zip
+RUN apk add icu-dev
+RUN docker-php-ext-install intl
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Install GD extension, as Mercado Pago plugin needs to Pix Gatwway
 RUN apk add --no-cache \

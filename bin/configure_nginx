@@ -1,0 +1,17 @@
+printf "\n\n\n"
+echo "[------------------ATENÇÃO------------------]"
+echo "Esse passo precisa ser realizado manualmente."
+echo "1. Abra em um editor o arquivo de configuração do Nginx localizado em config/nginx/templates/default.conf.conf"
+echo "2. Altere na linha 78 e 80 de 'admin' para o nome de admin que estiver dentro de src/ (exemplo: 'admin873qidutq')"
+printf "\n"
+echo "Os passos anteriores ja foram executados?"
+select yn in "Sim"; 
+do
+    case $yn in
+        "Sim")
+        echo "Vou reiniciar o servidor então."   
+        docker compose restart nginx
+        break
+        ;;
+    esac
+done
