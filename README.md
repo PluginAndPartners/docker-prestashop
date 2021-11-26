@@ -29,6 +29,18 @@ In the project folder, run the script that goes up the entire environment and co
 bash bin/setup
 ```
 
+## Links
+
+### Store
+<https://prestashop.local>
+
+### PHPMyAdmin
+<http://localhost:8082/>
+
+### MailHog
+<http://localhost:8025/>
+
+
 ## Install Mercado Pago Plugin
 
 Execute the install script 
@@ -39,26 +51,19 @@ bash bin/install_plugin
 This will show up
 ```
 Você deseja instalar o plugin do Mercado Pago direto da loja?
-1) Sim, quero a ultima versão do plugin
-2) Sim, a versão que estou desenvolvendo
-3) Não
+1) Sim, a versão que estou desenvolvendo
+2) Não
 ```
 
 ### First option
-If you choose the **first option**, the script will go to the prestashop marketplace and install the last version o plugin.
-
-### Second option
-if you choose the **second option**, this will show up:
+If you choose the **second option**, this will show up:
 ```
 Por favor, coloque o caminho da pasta do seu plugin (por exemplo: /Users/mgouveia/Projects/cart-prestashop):
 ```
 Put the path of the plugin, in this case **cart-prestashop**
 
-### Third option
+### Second option
 Do nothing
-
-
-
 
 ## Uninstall Mercado Pago Plugin
 Execute the uninstall script 
@@ -82,8 +87,7 @@ bash bin/uninstall_plugin
 
 ## Todo
 To improve this project, I list some things:
+- [ ] Pre-configure Nginx / Or change to Apache
 - [ ] Pre-registered products
-- [ ] Choosing which version of prestashop to install
 - [ ] Choosing which version of Prestashop to install
 - [ ] Choosing which version of PHP to install
-- [ ] Configure an FTP server to perform functions they need (Installing plugins)
