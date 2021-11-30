@@ -7,13 +7,7 @@ bash bin/ssl
 printf "\n\n\n"
 echo "⚙️ Configurando prestashop"
 bash bin/configure_presta
+echo "[PROXIMO PASSO]"
 echo "⚙️ Configurando NGINX"
-bash bin/configure_nginx
+echo "Execute 'bash bin/configure_nginx' e "
 printf "\n"
-echo "⚙️ [DADOS DA LOJA]"
-echo "Acesse a sua loja: https://prestashop.local"
-printf "\n"
-echo "[Usuário: admin@mercadopago.com / Senha: 0123456789]"
-printf "\n"
-echo "Para instalar o plugin do Mercado Pago: bash bin/install_plugin"
-printf "\n\n\n"

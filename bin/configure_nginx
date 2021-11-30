@@ -11,6 +11,7 @@ do
         "Sim")
         echo "Vou reiniciar o servidor então."   
         docker compose restart nginx
+        bash bin/store_info
         break
         ;;
     esac
